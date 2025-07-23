@@ -2,6 +2,8 @@
 
 Podstawowa aplikacja Next.js z wyświetlaniem listy zwrotów.
 
+> **Uwaga**: Ta aplikacja została stworzona przez [Claude Code](https://claude.ai/code) jako część warsztatów Next.js.
+
 ## Funkcjonalności
 
 - Statyczna lista zwrotów na stronie głównej

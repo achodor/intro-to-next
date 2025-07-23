@@ -1,135 +1,107 @@
-# Turborepo starter
+# Next.js Workshop Series
 
-This Turborepo starter is maintained by the Turborepo core team.
+This is a Turborepo monorepo containing 5 Next.js applications that demonstrate progressive Next.js concepts through a returns management system. Each iteration builds upon the previous one, showcasing different Next.js features and patterns.
 
-## Using this example
+## Workshop Development
 
-Run the following command:
+The workshop idea and structure were discussed and planned with Claude AI. All code in this repository was written by [Claude Code](https://claude.ai/code), Anthropic's AI coding assistant, to demonstrate modern Next.js development patterns and best practices.
 
-```sh
-npx create-turbo@latest
+## Apps
+
+This monorepo contains 5 progressive Next.js applications:
+
+- **iteration-1-basics** - Static returns table with basic layout
+- **iteration-2-routing** - File-based routing with dynamic routes and loading states  
+- **iteration-3-data-fetching** - Server Components with data fetching
+- **iteration-4-forms-actions** - Forms with Server Actions and validation
+- **iteration-5-authentication** - Full authentication system with JWT and middleware
+
+Each app is built with Next.js 15, TypeScript, and Tailwind CSS.
+
+## Tech Stack
+
+- **Framework**: Next.js 15 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4
+- **Package Manager**: Bun
+- **Linting/Formatting**: Biome
+- **Monorepo**: Turborepo
+
+## Getting Started
+
+### Prerequisites
+- Node.js >=22
+- Bun package manager
+
+### Installation
+
+```bash
+bun install
 ```
 
-## What's inside?
+### Development
 
-This Turborepo includes the following packages/apps:
+```bash
+# Start all apps
+bun run dev
 
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+# Start specific app
+turbo dev --filter=iteration-1-basics
+```
 
 ### Build
 
-To build all apps and packages, run the following command:
+```bash
+# Build all apps
+bun run build
 
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build
-yarn dlx turbo build
-pnpm exec turbo build
+# Build specific app
+turbo build --filter=iteration-1-basics
 ```
 
-You can build a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
+## Workshop Structure
 
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build --filter=docs
+Each iteration builds upon the previous one:
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build --filter=docs
-yarn exec turbo build --filter=docs
-pnpm exec turbo build --filter=docs
-```
+1. **Basics** - Learn Next.js fundamentals with static content
+2. **Routing** - Implement file-based routing and navigation
+3. **Data Fetching** - Use Server Components to fetch data
+4. **Forms & Actions** - Handle forms with Server Actions
+5. **Authentication** - Add JWT-based authentication
 
-### Develop
+## Domain Model
 
-To develop all apps and packages, run the following command:
+All apps use a returns management system with this data structure:
 
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev
-yarn exec turbo dev
-pnpm exec turbo dev
-```
-
-You can develop a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
-
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev --filter=web
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev --filter=web
-yarn exec turbo dev --filter=web
-pnpm exec turbo dev --filter=web
+```typescript
+interface Return {
+  id: string;
+  orderNumber: string;
+  customerName: string;
+  productName: string;
+  reason: string;
+  status: 'pending' | 'approved' | 'rejected' | 'processed';
+  requestDate: string;
+  carrier: 'dpd' | 'inpost' | 'dhl' | 'gls';
+  trackingNumber: string;
+  sendDate: string;
+  notes?: string;
+}
 ```
 
-### Remote Caching
+## Additional Commands
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+```bash
+# Lint all apps
+bun run lint
 
-Turborepo can use a technique known as [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+# Type check all apps
+bun run check-types
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo login
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo login
-yarn exec turbo login
-pnpm exec turbo login
+# Work with individual apps
+cd apps/iteration-1-basics && bun run dev
 ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+## Learning Path
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo link
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo link
-yarn exec turbo link
-pnpm exec turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turborepo.com/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.com/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.com/docs/reference/configuration)
-- [CLI Usage](https://turborepo.com/docs/reference/command-line-reference)
+Start with `iteration-1-basics` and progress through each iteration to learn Next.js concepts progressively. Each app includes detailed README with specific learning objectives and implementation details.

@@ -1,20 +1,22 @@
 # Iteration 3: Data Fetching
 
-Aplikacja z API routes i Server Components do pobierania danych.
+Aplikacja z Server Components do pobierania danych (bez API routes).
+
+> **Uwaga**: Ta aplikacja została stworzona przez [Claude Code](https://claude.ai/code) jako część warsztatów Next.js.
 
 ## Funkcjonalności
 
-- API routes (`/api/returns`, `/api/returns/[id]`)
-- Server Components z fetch() calls
-- Proper error handling dla API
-- Loading states i cache management
+- Server Components z fetch() calls do danych
+- Loading states i error handling
+- Cache management z `cache: 'no-store'`
+- Routing między stronami
 
 ## Struktura
 
-- `app/api/returns/route.ts` - GET wszystkich zwrotów
-- `app/api/returns/[id]/route.ts` - GET zwrotu po ID
-- `app/returns/page.tsx` - Lista z API fetch
-- `app/returns/[id]/page.tsx` - Szczegóły z API fetch
+- `app/returns/page.tsx` - Lista z fetch() call
+- `app/returns/[id]/page.tsx` - Szczegóły z fetch() call
+- `lib/mock-data.ts` - Dane testowe
+- `lib/types.ts` - Interfejsy TypeScript
 
 ## Uruchomienie
 
@@ -26,8 +28,8 @@ bun run dev
 
 ## Kluczowe koncepty Next.js
 
-- API Routes (Route Handlers)
 - Server Components data fetching
+- Loading UI components
 - Error boundaries
-- Cache configuration
-- NextResponse usage
+- Cache configuration (`cache: 'no-store'`)
+- Dynamic routes

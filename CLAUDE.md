@@ -82,16 +82,15 @@ interface Return {
 - Loading UI components and not-found pages
 
 ### Iteration 3: Data Fetching
-- API routes: `/api/returns`, `/api/returns/[id]`
-- Server Components with fetch() calls
+- Server Components with fetch() calls (no API routes)
 - Error handling and cache management
 - **Important**: Uses `cache: 'no-store'` for fresh data
+- Loading UI components
 
 ### Iteration 4: Forms & Server Actions  
 - Edit forms with validation and error handling
 - Server Actions using `useActionState` hook
 - Form submission with success/error messages
-- API routes with PATCH method for updates
 - **Key files**: `lib/actions.ts`, `components/EditReturnForm.tsx`
 
 ### Iteration 5: Authentication
@@ -127,7 +126,7 @@ interface Return {
 - Use `useActionState` for form state management
 - Implement proper loading states and user feedback
 
-### API development (iterations 3-4)
-- Follow NextResponse patterns for consistent API responses
+### Server Actions development (iteration 4)
+- Server Actions return `{ success: boolean, error?: string, fieldErrors?: object }`
 - Include artificial delays for realistic loading states
-- Implement proper error handling with appropriate HTTP status codes
+- Implement proper error handling and validation

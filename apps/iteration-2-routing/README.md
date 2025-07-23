@@ -2,6 +2,8 @@
 
 Aplikacja z systemem routingu i stronami szczegółów.
 
+> **Uwaga**: Ta aplikacja została stworzona przez [Claude Code](https://claude.ai/code) jako część warsztatów Next.js.
+
 ## Funkcjonalności
 
 - Routing między stronami (`/`, `/returns`, `/returns/[id]`)

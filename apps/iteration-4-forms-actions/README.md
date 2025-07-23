@@ -2,20 +2,22 @@
 
 Aplikacja z formularzami i Server Actions do edycji danych.
 
+> **Uwaga**: Ta aplikacja została stworzona przez [Claude Code](https://claude.ai/code) jako część warsztatów Next.js.
+
 ## Funkcjonalności
 
 - Formularze do edycji zwrotów
 - Server Actions z walidacją
-- API routes z PATCH method
 - Form validation i error handling
-- Success/error messages
+- Success/error messages z useActionState
 
 ## Struktura
 
 - `lib/actions.ts` - Server Actions
 - `components/EditReturnForm.tsx` - Formularz edycji
 - `app/returns/[id]/edit/page.tsx` - Strona edycji
-- `app/api/returns/[id]/route.ts` - PATCH endpoint
+- `lib/mock-data.ts` - Dane testowe
+- `lib/types.ts` - Interfejsy TypeScript
 
 ## Uruchomienie
 
