@@ -1,24 +1,24 @@
 # Iteration 3: Data Fetching
 
-Aplikacja z Server Components do pobierania danych (bez API routes).
+Application with Server Components for data fetching (without API routes).
 
-> **Uwaga**: Ta aplikacja została stworzona przez [Claude Code](https://claude.ai/code) jako część warsztatów Next.js.
+> **Note**: This application was created by [Claude Code](https://claude.ai/code) as part of the Next.js workshop series.
 
-## Funkcjonalności
+## Features
 
-- Server Components z fetch() calls do danych
-- Loading states i error handling
-- Cache management z `cache: 'no-store'`
-- Routing między stronami
+- Server Components with fetch() calls for data
+- Loading states and error handling
+- Cache management with `cache: 'no-store'`
+- Routing between pages
 
-## Struktura
+## Structure
 
-- `app/returns/page.tsx` - Lista z fetch() call
-- `app/returns/[id]/page.tsx` - Szczegóły z fetch() call
-- `lib/mock-data.ts` - Dane testowe
-- `lib/types.ts` - Interfejsy TypeScript
+- `app/returns/page.tsx` - List with fetch() call
+- `app/returns/[id]/page.tsx` - Details with fetch() call
+- `lib/mock-data.ts` - Test data
+- `lib/types.ts` - TypeScript interfaces
 
-## Uruchomienie
+## Getting Started
 
 ```bash
 cd apps/iteration-3-data-fetching
@@ -26,7 +26,7 @@ bun install
 bun run dev
 ```
 
-## Kluczowe koncepty Next.js
+## Key Next.js Concepts
 
 - Server Components data fetching
 - Loading UI components

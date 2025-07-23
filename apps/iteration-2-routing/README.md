@@ -1,25 +1,25 @@
 # Iteration 2: Routing
 
-Aplikacja z systemem routingu i stronami szczegółów.
+Application with routing system and detail pages.
 
-> **Uwaga**: Ta aplikacja została stworzona przez [Claude Code](https://claude.ai/code) jako część warsztatów Next.js.
+> **Note**: This application was created by [Claude Code](https://claude.ai/code) as part of the Next.js workshop series.
 
-## Funkcjonalności
+## Features
 
-- Routing między stronami (`/`, `/returns`, `/returns/[id]`)
-- Strona szczegółów zwrotu z parametrami URL
-- Loading states i error handling
-- 404 strona dla nieistniejących zwrotów
+- Routing between pages (`/`, `/returns`, `/returns/[id]`)
+- Return detail page with URL parameters
+- Loading states and error handling
+- 404 page for non-existent returns
 
-## Struktura
+## Structure
 
-- `app/page.tsx` - Strona główna z linkiem do zwrotów
-- `app/returns/page.tsx` - Lista zwrotów
-- `app/returns/[id]/page.tsx` - Szczegóły zwrotu
+- `app/page.tsx` - Homepage with link to returns
+- `app/returns/page.tsx` - Returns list
+- `app/returns/[id]/page.tsx` - Return details
 - `app/returns/[id]/loading.tsx` - Loading UI
-- `app/not-found.tsx` - 404 strona
+- `app/not-found.tsx` - 404 page
 
-## Uruchomienie
+## Getting Started
 
 ```bash
 cd apps/iteration-2-routing
@@ -27,7 +27,7 @@ bun install
 bun run dev
 ```
 
-## Kluczowe koncepty Next.js
+## Key Next.js Concepts
 
 - File-based routing
 - Dynamic routes `[id]`

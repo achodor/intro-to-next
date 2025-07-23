@@ -1,25 +1,25 @@
 # Iteration 4: Forms & Server Actions
 
-Aplikacja z formularzami i Server Actions do edycji danych.
+Application with forms and Server Actions for data editing.
 
-> **Uwaga**: Ta aplikacja została stworzona przez [Claude Code](https://claude.ai/code) jako część warsztatów Next.js.
+> **Note**: This application was created by [Claude Code](https://claude.ai/code) as part of the Next.js workshop series.
 
-## Funkcjonalności
+## Features
 
-- Formularze do edycji zwrotów
-- Server Actions z walidacją
-- Form validation i error handling
-- Success/error messages z useActionState
+- Forms for editing returns
+- Server Actions with validation
+- Form validation and error handling
+- Success/error messages with useActionState
 
-## Struktura
+## Structure
 
 - `lib/actions.ts` - Server Actions
-- `components/EditReturnForm.tsx` - Formularz edycji
-- `app/returns/[id]/edit/page.tsx` - Strona edycji
-- `lib/mock-data.ts` - Dane testowe
-- `lib/types.ts` - Interfejsy TypeScript
+- `components/EditReturnForm.tsx` - Edit form
+- `app/returns/[id]/edit/page.tsx` - Edit page
+- `lib/mock-data.ts` - Test data
+- `lib/types.ts` - TypeScript interfaces
 
-## Uruchomienie
+## Getting Started
 
 ```bash
 cd apps/iteration-4-forms-actions
@@ -27,10 +27,10 @@ bun install
 bun run dev
 ```
 
-## Kluczowe koncepty Next.js
+## Key Next.js Concepts
 
 - Server Actions
 - Form handling
 - useActionState hook
 - Form validation
-- Revalidation i redirect
+- Revalidation and redirect

@@ -1,24 +1,24 @@
 # Iteration 1: Basics
 
-Podstawowa aplikacja Next.js z wyświetlaniem listy zwrotów.
+Basic Next.js application with returns list display.
 
-> **Uwaga**: Ta aplikacja została stworzona przez [Claude Code](https://claude.ai/code) jako część warsztatów Next.js.
+> **Note**: This application was created by [Claude Code](https://claude.ai/code) as part of the Next.js workshop series.
 
-## Funkcjonalności
+## Features
 
-- Statyczna lista zwrotów na stronie głównej
-- Podstawowy layout z nawigacją
-- Responsywny design z Tailwind CSS
-- Polskie etykiety i interfejs użytkownika
+- Static returns list on the homepage
+- Basic layout with navigation
+- Responsive design with Tailwind CSS
+- Polish labels and user interface
 
-## Struktura
+## Structure
 
-- `app/page.tsx` - Strona główna z listą zwrotów
-- `app/layout.tsx` - Layout z nawigacją
-- `lib/types.ts` - Interfejsy TypeScript
-- `lib/mock-data.ts` - Dane testowe
+- `app/page.tsx` - Homepage with returns list
+- `app/layout.tsx` - Layout with navigation
+- `lib/types.ts` - TypeScript interfaces
+- `lib/mock-data.ts` - Test data
 
-## Uruchomienie
+## Getting Started
 
 ```bash
 cd apps/iteration-1-basics
@@ -26,7 +26,7 @@ bun install
 bun run dev
 ```
 
-## Kluczowe koncepty Next.js
+## Key Next.js Concepts
 
 - App Router
 - Server Components

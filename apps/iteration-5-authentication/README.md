@@ -1,30 +1,30 @@
 # Iteration 5: Authentication
 
-Aplikacja z pełnym systemem autoryzacji użytkowników.
+Application with full user authentication system.
 
-> **Uwaga**: Ta aplikacja została stworzona przez [Claude Code](https://claude.ai/code) jako część warsztatów Next.js.
+> **Note**: This application was created by [Claude Code](https://claude.ai/code) as part of the Next.js workshop series.
 
-## Funkcjonalności
+## Features
 
-- Strona logowania z formularzem
-- JWT authentication z httpOnly cookies
-- Middleware do ochrony routes
+- Login page with form
+- JWT authentication with httpOnly cookies
+- Middleware for route protection
 - Session management
 - Login/logout actions
 
-## Dane testowe
+## Test Credentials
 
 - Email: `admin@example.com`
-- Hasło: `password123`
+- Password: `password123`
 
-## Struktura
+## Structure
 
-- `lib/auth.ts` - Funkcje autoryzacji
+- `lib/auth.ts` - Authorization functions
 - `middleware.ts` - Route protection
-- `app/login/page.tsx` - Strona logowania
-- `app/returns/*` - Chronione strony
+- `app/login/page.tsx` - Login page
+- `app/returns/*` - Protected pages
 
-## Uruchomienie
+## Getting Started
 
 ```bash
 cd apps/iteration-5-authentication
@@ -32,10 +32,10 @@ bun install
 bun run dev
 ```
 
-## Kluczowe koncepty Next.js
+## Key Next.js Concepts
 
 - Middleware
-- JWT z jose library  
+- JWT with jose library  
 - HttpOnly cookies
 - Protected routes
 - Session management
